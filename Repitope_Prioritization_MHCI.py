@@ -5,7 +5,7 @@ pept_len_range = "8:11" ## For MHC-I prediction
 home = "C:/Repitope"
 target_peptide_file = home + "/peptide_test.txt"
 tcr_frag_file = home + "/FragmentLibrary.fst"
-mhci_feature_file = "D:/Research/Immunogenicity/FeatureDF_MHCI_Weighted.10000.fst"
+mhci_feature_file = home + "/FeatureDF_MHCI_Weighted.10000.fst"
 
 import pyper
 r = pyper.R()
