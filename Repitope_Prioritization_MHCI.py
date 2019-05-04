@@ -39,13 +39,10 @@ command = "res_MHCI <- EpitopePrioritization( \
   fragLib=fragLibDT,\
   aaIndexIDSet='all',\
   fragLenSet=3:8,\
-  fragDepthSet=10000,\
-  fragLibTypeSet='Weighted',\
+  fragDepth=10000,\
+  fragLibType='Weighted',\
   featureSet=MHCI_Human_MinimumFeatureSet,\
+  seedSet=1:5,\
   coreN=" + cpu + ",\
-  tmpDir='" + home + "/ProcessID_" + pid + "/Temp',\
-  seedSet=1:5)"
+  outDir='" + home + "/MHCI_ProcessID_" + pid + "')"
 r(command)
-
-command = "readr::write_csv(res_MHCI, '" + home + "/ProcessID_" + pid + "/EpitopePrioritization_MHCI.csv')"
-r(command)	

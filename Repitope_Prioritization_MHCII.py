@@ -39,13 +39,11 @@ command = "res_MHCII <- EpitopePrioritization( \
   fragLib=fragLibDT,\
   aaIndexIDSet='all',\
   fragLenSet=3:11,\
-  fragDepthSet=10000,\
-  fragLibTypeSet='Weighted',\
+  fragDepth=10000,\
+  fragLibType='Weighted',\
   featureSet=MHCII_Human_MinimumFeatureSet,\
+  seedSet=1:5,\
   coreN=" + cpu + ",\
-  tmpDir='" + home + "/ProcessID_" + pid + "/Temp',\
-  seedSet=1:5)"
+  outDir='" + home + "/MHCII_ProcessID_" + pid + "')"
 r(command)
-
-command = "readr::write_csv(res_MHCII, '" + home + "/ProcessID_" + pid + "/EpitopePrioritization_MHCII.csv')"
-r(command)	
+	
